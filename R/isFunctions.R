@@ -31,5 +31,7 @@ is.decimal_forced<-function(x){
 is.discrete<-function(x){is.factor(x) | is.character(u)}
 
 ##: is.continuous() - checks to see if value is numeric and can therefore be applied to continuous scale
-is.continuous<-function(x){is.numeric((x))}
+is.continuous<-function(x){
+  ifelse(class(x) %in% c("numeric", "integer", "double"), T, F)
+  }
 
